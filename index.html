@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="background-clouds"></div>
+    <section>
+        <div class="header">
+            <img src="images/gitcat-8.png" alt="git-cat"/>
+            <h1> Spill Your Git Repository On Space</h1>
+            <p> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+</div>
+     
+        <form id="theForm" method="GET">
+            <input type="text" name="owner" id="owner" />
+            <input type="text" name="repos" id="repos" />
+            <button id="btnUser"><i class="far fa-arrow-alt-circle-right"></i></button>
+        </form>
+        <img class="imgLoader" alt="" />
+    </section>
+    <script src="./node_modules/moment/moment.js"></script>
+    <script src="./index.js"></script>
+    <script src="./stars.js"></script>
+<script>
+    moment().format();
+</script>
+</body>
+</html>

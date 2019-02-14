@@ -1,0 +1,30 @@
+@keyframes stars-move {
+    0%   {transform:translate(0px,0px);}
+    40%   {transform:translate(2px,4px);}
+  100%   {transform:translate(-2px,-3px);}
+}
+
+
+.background-clouds
+{
+    top:0;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/clouds.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+}
+.star
+{
+    animation-name: stars-move;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;  
+  position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(ellipse at center ,#fff39f 1%, rgba(255,216,51, 0.3) 4% , transparent 10%);
+
+}
