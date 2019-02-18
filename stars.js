@@ -18,11 +18,10 @@ var width = document.body.clientWidth;
     star.style.height =  star.style.width;
     star.style.animationDelay =  Math.random()*2 + 's';
         document.querySelector('.background-clouds').appendChild(star);
-        console.log(starsNodes);
     }
 }
 }
 
-const starsBg = new Stars(200, 10,40);
+const starsBg = new Stars(200, 10,100);
 
 starsBg.createStars();

@@ -9,6 +9,19 @@
     margin:3px;
 }
 
+@mixin btns($left, $right,$radius) {
+        border-top: 1px solid rgba(27, 31, 35, 0.2);
+        border-bottom: 1px solid rgba(27, 31, 35, 0.2);
+        border-right: $right;
+        border-left: $left;
+        border-color:rgba(27, 31, 35, 0.2);
+        color:#0366d6;
+        border-radius: $radius;
+        background-color: #fff;
+        font-size: 0.8rem;
+        padding: 10px;
+        text-decoration:none;
+}
 
 *
 {
@@ -45,8 +58,12 @@ section
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.1) , 0px 10px 10px 3px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
     input
     {
+        width: 100%;
         padding-left: 20px;
         color: #545454;
         font-size: 1.2rem;
@@ -118,22 +135,250 @@ img.imgLoader
 
 
  // class style of repos
+
+.commits
+{
+    margin-top: 30px;
+}
+
+
 .commit
 {
-    width: 300px;
-    height: 300px;
-    background-color: #fff;
-    border-radius: 150px;
-    img
+    width: 100%;
+    max-width: 1080px;
+    background-color: rgba(255,255,255,1); 
+    border-top: 1px solid #eaecee;
+    border-left: 1px solid #eaecee;
+    border-right: 1px solid #eaecee;
+    padding: 10px;
+    font-family:  -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(0px);
+    box-shadow: 0px;
+    position: relative;
+    transition: all .1s ease-in;
+    &:hover
     {
-        width: 30%;
+    z-index: 1;
+     transform: translateY(-4px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+    }
+    &::after
+    {
+        content: '';
+        height: 126px;
+        width: 1px;
+        background-color: #fff;
+        position: absolute;
+        left: -14px;
+        top: -23px;
+    }
+    .commit-meta
+    {
+        text-align: left;
+        padding-left: 10px; 
+        .details-meta-commit
+        {
+            display: flex;
+            align-items: center;
+            p
+            {
+                padding-left: 8px;
+                color: #434343;
+                font-size: 0.75rem;
+            }
+            svg
+            {
+                margin-left: 8px;
+                path
+                {
+                    fill: #cd0ce2;
+                }
+            }
+        }
+    }
+    
+    
+    p.commit-title
+    {
+        font-size: .9rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #434343;
+        margin: 0px !important;
+    }
+    .url-avatar
+    {
+        width: 6%;
+        padding:1%;
         height: auto;
-        border-radius: 150px;
-
-    } 
+        transition: all .2s;
+        &:hover
+            {
+                padding:0%;
+            }
+        img
+        {
+            border-radius: 4px;
+            width: 100%;
+        }
+    }
     .line
     {
         width: 30%;
         opacity: 0.2;
     }
+    clipboard-copy
+    {
+        @include btns( 1px solid rgba(27, 31, 35, 0.2), 0px solid rgba(27, 31, 35, 0.2) ,3px 0px 0px 3px);
+        &:hover
+        {
+            color:#fff;
+            background-color: #0366d6;
+            cursor: pointer;
+            .octicon
+            {
+                fill: #fff;
+            }
+        }
+    }
+    a.btn-commiter
+    {
+        @include btns( 1px solid rgba(27, 31, 35, 0.2), 1px solid rgba(27, 31, 35, 0.2) ,0px 3px 3px 0px);
+
+        &:hover
+        {
+            color:#fff;
+            background-color: #0366d6;
+        }
+    }
+}
+.table-list-cell
+{
+    position: absolute;
+}
+.signed-commit-badge.verified
+{
+    color: #cd0ce2;
+}
+.signed-commit-badge-large
+{
+    border-radius: 3px;
+    font-size: .8rem;
+    margin-right: 9px;
+    margin: 0px 10px;
+    padding: 6px 12px;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    span
+    {
+    position: relative;
+    top: 3px;
+    }
+    &:hover
+    {
+        cursor: pointer;
+        border: 1px solid #cd0ce2;
+    }
+}
+.button-commit
+{
+    display: flex;
+}
+
+
+// date titile of commits
+.ComDateBar
+{
+    text-align: left;
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    svg
+    {
+        position: relative;
+        left: -20px;
+        fill: #fff;
+        background-color: #050538;
+        z-index: 4;
+    }
+    .timeLine
+    {
+        height: 100px;
+        width: 1px;
+        background-color: #fff;
+        position: absolute;
+        left: -8px;
+        top: 34px;
+    }
+}
+
+// menu bar 
+.menu-bar
+{
+    margin-top: 58px;
+    height: 68px;
+    border-radius: 30px 30px 0px 0px;
+    background-color: #fff;
+}
+
+// hover on image
+.when-hover
+{
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    top: -244px;
+    left: 15px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+    &::before
+    {
+        content: '';
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        position: absolute;
+        bottom: -5px;
+        z-index: 20;
+        background-color: #fff;
+    }
+.info-hover-main
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    img
+    {
+        width: 15%;
+    }
+    .hover-name
+    {
+        font-weight:bold;
+        color: #434343;
+        font-size: 1rem !important;
+    }
+    .hover-nikname
+    {
+        color: #989898;
+    }
+    .hover-description
+    {
+        width: 100%;
+        font-size: 1rem !important
+    }
+    .img-location-hover
+    {
+        width: 5%;
+        p
+        {
+            font-size: 0.75rem !important
+        }
+    }
+}
 }
